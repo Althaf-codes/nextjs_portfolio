@@ -53,8 +53,7 @@ const projects: Project[] = [
     description: "I took this UI as a challenge and finished within 2 hours",
     imageUrl:
       "https://res.cloudinary.com/dstikpo7o/image/upload/v1754723790/Screenshot_2025-08-09_124420_zyaeku.png",
-    githubUrl:
-      "https://res.cloudinary.com/dstikpo7o/image/upload/v1754723790/Screenshot_2025-08-09_124420_zyaeku.png",
+    githubUrl: "https://github.com/Althaf-codes/simple-real-estate-app-ui",
     demoUrl: "",
   },
   {
