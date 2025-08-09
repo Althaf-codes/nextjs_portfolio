@@ -18,9 +18,10 @@ interface BlogModel {
 
 const dirContent = fs.readdirSync("content/blogs", "utf-8");
 
-console.log(dirContent);
+// Filter to include only markdown files (e.g., .md)
+const blogFiles = dirContent.filter((file) => file.endsWith(".md"));
 
-const blogs: BlogModel[] = dirContent.map((file) => {
+const blogs: BlogModel[] = blogFiles.map((file) => {
   const fileContent = fs.readFileSync(`content/blogs/${file}`, "utf-8");
   const { data } = matter(fileContent);
   const value: BlogModel = {

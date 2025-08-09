@@ -13,6 +13,8 @@ import rehypeSlug from "rehype-slug";
 import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import { Metadata } from "next";
+import path from "path";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: { slug: string; title: string; description: string };
@@ -40,7 +42,16 @@ export default async function ProjectPost({
     })
     .use(rehypeAutolinkHeadings);
 
-  const filePath = `content/projects/${params.slug}.md`;
+  const filePath = path.join(
+    process.cwd(),
+    `content/projects/${params.slug}.md`
+  );
+
+  if (!fs.existsSync(filePath)) {
+    notFound(); // This will cause Next.js to show a 404 page
+  }
+
+  // const filePath = `content/projects/${params.slug}.md`;
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data, content } = matter(fileContent);
 
