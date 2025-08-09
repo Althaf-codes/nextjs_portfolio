@@ -12,7 +12,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypePrettyCode from "rehype-pretty-code";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 // type Props = {
 //     params: { slug: string, title:string, description:string }
@@ -60,14 +60,13 @@ export default async function AboutSection() {
   );
 }
 
-export async function generateMetadata(
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
+  // parent: ResolvingMetadata
   // read route params
 
   const filePath = `content/about/know-me.md`;
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(fileContent);
+  const { data } = matter(fileContent);
 
   return {
     title: `About - Portfolio`,

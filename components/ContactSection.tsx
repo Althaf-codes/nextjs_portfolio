@@ -1,21 +1,21 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 
 const ContactSection: React.FC = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [purpose, setPurpose] = useState("");
-  const [message, setMessage] = useState("");
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [purpose, setPurpose] = useState("");
+  // const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log({ name, email, purpose, message });
-    setName("");
-    setEmail("");
-    setPurpose("");
-    setMessage("");
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log({ name, email, purpose, message });
+  //   setName("");
+  //   setEmail("");
+  //   setPurpose("");
+  //   setMessage("");
+  // };
 
   return (
     <section className="text-gray-300 bg-gradient-to-br from-emerald-900 via-black to-black body-font relative overflow-hidden">
@@ -40,8 +40,8 @@ const ContactSection: React.FC = () => {
             </svg>
 
             <p className="leading-relaxed text-lg italic">
-              "If you want to walk fast, walk alone. If you want to walk far,
-              walk together."
+              &quot;If you want to walk fast, walk alone. If you want to walk
+              far, walk together.&quot;
             </p>
 
             <span className="inline-block h-1 w-10 rounded bg-emerald-500 mt-8 mb-6"></span>

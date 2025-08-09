@@ -21,7 +21,7 @@ const ProjectCard: React.FC<{ project: Project; isLeft: boolean }> = ({
   isLeft,
 }) => {
   const [isOverflowing, setIsOverflowing] = useState(false);
-  const [showMore, setShowMore] = useState(false);
+  const [showMore] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const router = useRouter(); // For navigation

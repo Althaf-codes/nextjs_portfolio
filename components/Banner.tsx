@@ -1,7 +1,6 @@
-'use client'
+"use client";
 
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const skills = ["Flutter", "Dart", "Firebase", "React", "Node.js"];
 
@@ -26,13 +25,15 @@ export default function Banner() {
           {/* Left side - Text content */}
           <div className="md:w-1/2 text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              <span className="text-blue-400">Hi, I'm</span>{' '}
+              <span className="text-blue-400">Hi, I&apos;m</span>{" "}
               <span className="text-purple-400">Althaf</span>
             </h1>
             <p className="text-2xl md:text-3xl mb-8">
-              I'm experienced in{' '}
+              I&apos;m experienced in{" "}
               <span className="inline-block min-w-[200px]">
-                <span className="text-green-400 animate-fade-in-out">{skills[skillIndex]}</span>
+                <span className="text-green-400 animate-fade-in-out">
+                  {skills[skillIndex]}
+                </span>
               </span>
             </p>
           </div>
@@ -41,10 +42,7 @@ export default function Banner() {
           <div className="md:w-1/2 flex justify-center items-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80 animate-float">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/50 to-purple-600/50 rounded-full blur-xl"></div>
-              <div className="relative w-full h-full rounded-full overflow-hidden">
-               
-                
-              </div>
+              <div className="relative w-full h-full rounded-full overflow-hidden"></div>
             </div>
           </div>
         </div>
@@ -54,15 +52,6 @@ export default function Banner() {
 }
 
 ///////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
 
 // 'use client'
 

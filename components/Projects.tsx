@@ -45,7 +45,7 @@ export default function Projects() {
               } md:w-1/2`}
             >
               <div className="bg-gray-700 rounded-lg overflow-hidden shadow-lg">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   width={600}

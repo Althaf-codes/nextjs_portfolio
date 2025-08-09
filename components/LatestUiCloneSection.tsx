@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -84,7 +85,7 @@ const LatestUiCloneSection = () => {
                            flex flex-col h-full shadow-lg hover:shadow-emerald-500/20 
                            transition-all duration-300 hover:scale-[1.02]"
               >
-                <img
+                <Image
                   className="h-40 rounded-lg w-full object-cover object-center mb-6 border border-white/10"
                   src={project.imageUrl}
                   alt={project.title}

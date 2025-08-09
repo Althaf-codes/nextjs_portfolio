@@ -97,7 +97,7 @@ const LandingSection = () => {
       {/* Main Text with Typing Effect */}
       <div className="lg:col-span-4 col-span-1 space-y-4 text-center lg:text-left z-10 lg:px-6 md:pt-12">
         <h1 className="text-4xl lg:text-6xl font-bold text-white">
-          Hi, I'm{" "}
+          Hi, I&apos;m{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-lime-300">
             Althaf
           </span>

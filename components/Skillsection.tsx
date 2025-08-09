@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Code, GitBranch } from "lucide-react";
+import { GitBranch } from "lucide-react";
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);

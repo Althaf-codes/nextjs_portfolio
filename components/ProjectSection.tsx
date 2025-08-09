@@ -82,7 +82,7 @@ const projects: Project[] = [
 ];
 
 const ProjectStepper: React.FC<{ projects: Project[] }> = ({ projects }) => {
-  const [activeStep, setActiveStep] = useState(0);
+  const [, setActiveStep] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isInProjectSection, setIsInProjectSection] = useState(false);
@@ -93,6 +93,10 @@ const ProjectStepper: React.FC<{ projects: Project[] }> = ({ projects }) => {
   }, [projects.length]);
 
   useEffect(() => {
+    const node = containerRef.current; // snapshot
+
+    if (!node) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -106,12 +110,18 @@ const ProjectStepper: React.FC<{ projects: Project[] }> = ({ projects }) => {
       }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
+    // if (containerRef.current) {
+    //   observer.observe(containerRef.current);
+    // }
+
+    // return () => {
+    //   if (containerRef.current) observer.unobserve(containerRef.current);
+    // };
+
+    observer.observe(node);
 
     return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
+      observer.unobserve(node);
     };
   }, []);
 
