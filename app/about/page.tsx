@@ -1,0 +1,76 @@
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import React from "react";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+import matter from "gray-matter";
+
+import fs from "fs";
+import OnThisPage from "@/components/OnThisPage";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+import rehypePrettyCode from "rehype-pretty-code";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
+import { Metadata, ResolvingMetadata } from "next";
+
+// type Props = {
+//     params: { slug: string, title:string, description:string }
+//     searchParams: { [key: string]: string | string[] | undefined }
+//   }
+
+export default async function AboutSection() {
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeStringify)
+    .use(rehypeSlug)
+    .use(rehypePrettyCode, {
+      theme: "material-theme-ocean",
+      transformers: [
+        transformerCopyButton({
+          visibility: "always",
+          feedbackDuration: 3_000,
+        }),
+      ],
+    })
+    .use(rehypeAutolinkHeadings);
+
+  const filePath = `content/about/about_me.md`; //know-me.md`;
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(fileContent);
+
+  const htmlContent = (await processor.process(content)).toString();
+
+  return (
+    <section className="bg-gray-950">
+      <MaxWidthWrapper className="prose dark:prose-invert ">
+        <div className="flex flex-col lg:flex-row py-16 ">
+          <div className="w-full lg:w-2/3 px-4 lg:px-10">
+            <h1>{data.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          </div>
+          <OnThisPage
+            className="text-sm w-full lg:w-96 mt-8 lg:mt-0 lg:ml-16"
+            htmlContent={htmlContent}
+          />
+        </div>
+      </MaxWidthWrapper>
+    </section>
+  );
+}
+
+export async function generateMetadata(
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+
+  const filePath = `content/about/know-me.md`;
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const { data, content } = matter(fileContent);
+
+  return {
+    title: `About - Portfolio`,
+    description: data.description,
+  };
+}

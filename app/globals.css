@@ -3,25 +3,199 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+
+
+
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 200px;
+  }
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.animate-gridMove {
+  animation: gridMove 10s linear infinite;
+}
+
+
+
+
+
+
+/* ///////////////// */
+
+
+
+
+/* Dark theme gradient background */
+/* .bg-dark-theme-gradient {
+  background: linear-gradient(to bottom right, #0a0f1f, #16243d);
+} */
+
+/* Grid pattern with animation */
+/* .bg-grid-pattern {
+  background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
+  background-size: 40px 40px;
+  position: relative;
+} */
+
+/* Light effect moving along grid lines */
+@keyframes lightEffect {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+/* 
+.grid-lines-light-effect {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0) 70%);
+  background-size: 200% 200%;
+  animation: lightEffect 10s linear infinite;
+} */
+
+
+
+
+
+
+
+/* Dark theme background */
+.bg-dark-theme {
+  background: linear-gradient(135deg, #0a0f1f, #1c2230);
+}
+
+/* Glassmorphic project card */
+.backdrop-blur-lg {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Icon for stepper */
+.icon-stepper {
+  color: #3b82f6; /* Tailwind's blue-500 */
+}
+
+/* General shadow and spacing */
+.shadow-lg {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-box{
+  box-shadow: 0 4px 15px rgba(167, 169, 167, 0.5);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .flex-row {
+    flex-direction: column;
+  }
+  
+  .flex-row-reverse {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+.reveal-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0ada79; 
+  transform: translateY(-100%);
+} 
+
+.l1, .l2, .l3, .r1, .r2, .r3 {
+  opacity: 0; /* Hidden at first */
+}
+
+
+
+
+
+
+/* /////////////////////////////////////////// */
+
+
+div.horizontalgap {
+  float: left;
+  overflow: hidden;
+  height: 1px;
+  width: 10px;
 }
