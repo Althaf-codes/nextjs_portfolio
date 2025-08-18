@@ -123,7 +123,7 @@ const LandingSection = () => {
 
           <div className="hidden lg:hidden md:flex space-x-4">
             <a
-              href="#"
+              href="https://github.com/Althaf-codes/"
               className="text-white hover:text-emerald-400 transition"
             >
               <FaGithub size={24} />
@@ -135,7 +135,7 @@ const LandingSection = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="#"
+              href="https://x.com/Unsung_Coder"
               className="text-white hover:text-emerald-400 transition"
             >
               <FaXTwitter size={24} />
@@ -163,13 +163,13 @@ const LandingSection = () => {
 
       {/* Social Links for Mobile */}
       <div className="flex justify-center space-x-4 mt-6 md:hidden z-10">
-        <a href="#" className="text-white hover:text-emerald-400 transition">
+        <a href="https://github.com/Althaf-codes/" className="text-white hover:text-emerald-400 transition">
           <FaGithub size={24} />
         </a>
         <a href="#" className="text-white hover:text-emerald-400 transition">
           <FaLinkedin size={24} />
         </a>
-        <a href="#" className="text-white hover:text-emerald-400 transition">
+        <a href="https://x.com/Unsung_Coder" className="text-white hover:text-emerald-400 transition">
           <FaXTwitter size={24} />
         </a>
       </div>
