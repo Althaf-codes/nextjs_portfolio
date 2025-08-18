@@ -51,7 +51,8 @@ const projects: Project[] = [
     imageUrl:
       "https://res.cloudinary.com/dstikpo7o/image/upload/v1754707284/Screenshot_2024-07-16_105103_olzdz7.png",
     githubUrl: "https://github.com/Althaf-codes/student-dental-checkup-app",
-    demoUrl: "",
+    demoUrl:
+      "https://player.cloudinary.com/embed/?cloud_name=dstikpo7o&public_id=dental_ui_challenge_emgkbk&profile=cld-default",
   },
 ];
 
@@ -85,12 +86,15 @@ const LatestUiCloneSection = () => {
                            flex flex-col h-full shadow-lg hover:shadow-emerald-500/20 
                            transition-all duration-300 hover:scale-[1.02]"
               >
-                <Image
-                  className="h-40 rounded-lg w-full object-cover object-center mb-6 border border-white/10"
-                  fill
-                  src={project.imageUrl}
-                  alt={project.title}
-                />
+                <div className="relative w-full h-40 mb-6">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-center rounded-lg border border-white/10"
+                  />
+                </div>
+
                 <h3 className="tracking-widest text-emerald-400 text-xs font-medium title-font">
                   {project.subtitle}
                 </h3>

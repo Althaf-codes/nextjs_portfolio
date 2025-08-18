@@ -54,15 +54,17 @@ const ProjectList = () => {
                 borderRadius: "16px",
               }}
             >
-              <Image
-                className="w-full h-48 object-cover object-top rounded-t-lg"
-                src={blog.imageUrl!}
-                alt={blog.title}
-                fill
-                style={{
-                  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.6)", // Shadow for image to add depth
-                }}
-              />
+              <div className="relative w-full h-40">
+                <Image
+                  src={blog.imageUrl!}
+                  alt={blog.title}
+                  fill
+                  className="object-cover object-top rounded-t-lg"
+                  style={{
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.6)",
+                  }}
+                />
+              </div>
 
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2 text-gray-200">

@@ -108,15 +108,18 @@ const ProjectList = () => {
               }}
             >
               {/* Image */}
-              <Image
-                className="w-full h-40 object-cover object-top rounded-t-lg"
-                src={blog.imageUrl!}
-                alt={blog.title}
-                fill
-                style={{
-                  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.6)",
-                }}
-              />
+
+              <div className="relative w-full h-40">
+                <Image
+                  src={blog.imageUrl!}
+                  alt={blog.title}
+                  fill
+                  className="object-cover object-top rounded-t-lg"
+                  style={{
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.6)",
+                  }}
+                />
+              </div>
 
               {/* Content */}
               <div className="p-4 flex flex-col flex-1">
@@ -179,12 +182,14 @@ const ProjectList = () => {
                            flex flex-col h-full shadow-lg hover:shadow-emerald-500/20 
                            transition-all duration-300 hover:scale-[1.02]"
                 >
-                  <Image
-                    className="h-40 rounded-lg w-full object-cover object-center mb-6 border border-white/10"
-                    src={project.imageUrl}
-                    fill
-                    alt={project.title}
-                  />
+                  <div className="relative w-full h-40 mb-6">
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-center rounded-lg border border-white/10"
+                    />
+                  </div>
                   <h3 className="tracking-widest text-emerald-400 text-xs font-medium title-font">
                     {project.subtitle}
                   </h3>

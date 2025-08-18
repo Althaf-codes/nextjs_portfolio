@@ -121,7 +121,7 @@ const Navbar = () => {
               <HamburgerMenuIcon className="md:hidden size-7" />
             </button>
           </SheetTrigger>
-          <SheetContent>
+          <SheetContent className="text-white">
             <SheetHeader>
               <SheetTitle>Navigation</SheetTitle>
             </SheetHeader>
