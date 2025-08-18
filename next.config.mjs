@@ -3,7 +3,14 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-      domains: ['res.cloudinary.com'], // Add any domains you're loading images from
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'res.cloudinary.com',
+        },
+      ],
+
+      // domains: ['res.cloudinary.com'], // Add any domains you're loading images from
     },
     webpack(config) {
       config.module.rules.push({

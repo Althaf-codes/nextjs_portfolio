@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="text-gray-400 bg-black-950 body-font pb-10">
+    <section className="text-gray-400 bg-black body-font pb-10">
       <div className="flex flex-col text-center w-full pt-10">
         <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
           About Me

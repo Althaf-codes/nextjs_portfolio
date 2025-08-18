@@ -112,6 +112,7 @@ const ProjectList = () => {
                 className="w-full h-40 object-cover object-top rounded-t-lg"
                 src={blog.imageUrl!}
                 alt={blog.title}
+                fill
                 style={{
                   boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.6)",
                 }}
@@ -181,6 +182,7 @@ const ProjectList = () => {
                   <Image
                     className="h-40 rounded-lg w-full object-cover object-center mb-6 border border-white/10"
                     src={project.imageUrl}
+                    fill
                     alt={project.title}
                   />
                   <h3 className="tracking-widest text-emerald-400 text-xs font-medium title-font">

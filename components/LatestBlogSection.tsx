@@ -31,6 +31,7 @@ const LatestBlogSection = () => {
               <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
+                  fill
                   src="https://dummyimage.com/720x400"
                   alt="blog"
                 />
@@ -80,6 +81,7 @@ const LatestBlogSection = () => {
               <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
+                  fill
                   src="https://dummyimage.com/721x401"
                   alt="blog"
                 />
@@ -129,6 +131,7 @@ const LatestBlogSection = () => {
               <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
+                  fill
                   src="https://dummyimage.com/722x402"
                   alt="blog"
                 />

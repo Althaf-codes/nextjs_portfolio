@@ -45,7 +45,7 @@ const Navbar = () => {
 
   return (
     // <nav className="fixed w-full backdrop-blur-md bg-white/30 dark:bg-black/30 z-50">
-    <nav className="fixed w-full h-16 top-0 bg-background/40 border-b-white/40 px-8 backdrop-blur flex items-center justify-between z-50">
+    <nav className="fixed w-full h-16 top-0 bg-background/40 border-b-white/40 px-8 backdrop-blur flex items-center justify-between z-50  text-white">
       <LoadingBar
         color="#00FF00"
         progress={progress}
@@ -56,7 +56,7 @@ const Navbar = () => {
       {/* <Link href="/" className="text-2xl font-bold">
           My PortFolio
         </Link> */}
-      <div className="text-lg font-bold md:text-xl items-center py-4">
+      <div className="text-lg font-bold md:text-xl items-center py-4 ">
         <Link href={"/"}>PortFolio</Link>
       </div>
 

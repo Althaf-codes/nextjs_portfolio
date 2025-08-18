@@ -153,7 +153,8 @@ const LandingSection = () => {
           <Image
             src="/project1.png"
             alt="Althaf"
-            layout="fill"
+            fill
+            // layout="fill"
             objectFit="cover"
             className="rounded-2xl"
           />

@@ -87,6 +87,7 @@ const LatestUiCloneSection = () => {
               >
                 <Image
                   className="h-40 rounded-lg w-full object-cover object-center mb-6 border border-white/10"
+                  fill
                   src={project.imageUrl}
                   alt={project.title}
                 />
